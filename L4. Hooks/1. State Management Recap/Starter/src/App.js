@@ -4,9 +4,9 @@ import Dasboard from "./Dasboard";
 const users = [{ username: "Amy" }, { username: "John" }];
 
 const messages = [
-  { username: "Amy", text: "Hi, Jon!" },
-  { username: "Amy", text: "How are you?" },
-  { username: "John", text: "Hi, Amy! Good, you?" },
+  { username: "Amy", message: "Hi, Jon!" },
+  { username: "Amy", message: "How are you?" },
+  { username: "John", message: "Hi, Amy! Good, you?" },
 ];
 
 const App = () => {
