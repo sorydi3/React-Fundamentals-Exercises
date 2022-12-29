@@ -1,12 +1,13 @@
 import React from "react";
 import PropTypes from "prop-types";
-import InputField from "./InputField";
+import Chat from "./Chat";
 
-export default function Dasboard() {
-    const [value, setValue] = React.useState("");
+export default function Dasboard({messages,users}) {
+    const [value, setValue] = React.useState({ username: "", message: "" });
     return (
-        <div>
-            <InputField value={value} onChange={setValue} />
+        <div className="container">
+            <Chat messages={messages} name={users[0]} message={value} onMessageChangee={setValue} />
+            <Chat messages={messages} name={users[1]} message={value} onMessageChangee={setValue} />
         </div>
     );
 }

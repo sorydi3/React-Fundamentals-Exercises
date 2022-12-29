@@ -1,6 +1,6 @@
 import logo from "./logo.svg";
 import "./App.css";
-
+import Dasboard from "./Dasboard";
 const users = [{ username: "Amy" }, { username: "John" }];
 
 const messages = [
@@ -21,7 +21,15 @@ const App = () => {
         <img src={logo} className="App-logo" alt="logo" />
         <h1 className="App-title">ReactND - Coding Practice</h1>
       </header>
-      <div className="container">
+      <Dasboard messages={messages} users={users}></Dasboard>
+    </div>
+  );
+};
+
+export default App;
+
+/*
+<div className="container">
         <div className="chat-window">
           <h2>Super Awesome Chat</h2>
           <div className="name sender">{users[0].username}</div>
@@ -91,8 +99,4 @@ const App = () => {
           </div>
         </div>
       </div>
-    </div>
-  );
-};
-
-export default App;
+*/

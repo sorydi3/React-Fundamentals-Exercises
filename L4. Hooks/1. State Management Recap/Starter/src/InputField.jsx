@@ -1,17 +1,28 @@
 import React from "react";
 import PropTypes from "prop-types";
 
-const InputField = ({ value, onChange }) => (
 
-    <form>
+export default function InputField({ message, onMessageChange,username,messages}) {
+    const handleSubmit = (e) => {
+        onMessageChange({username:username, message: e.target.value});
+    };
+
+    const handleSend = () => {
+        messages.push(message);
+        onMessageChange({username:username, message: ""});
+    };
+
+    return (
+        <div>
         <input
             type="text"
-            value={value}
-            onChange={e => onChange(e.target.value)}
+            value={message.username===username ? message.message : ""}
+            onChange={handleSubmit}
         />
-        <button type="submit">Send</button>
-    </form>
+        <button onClick={handleSend}>Send</button>
+    </div>
+    );
+}
 
-);
 
-export default InputField;
+
